@@ -1,4 +1,6 @@
-import { initializeApp, getApps } from 'firebase/app';
+// src/firebase.js
+
+import { initializeApp, getApps, getApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
@@ -12,18 +14,11 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
-let app;
-if (typeof window !== 'undefined') {
-  if (!getApps().length) {
-    app = initializeApp(firebaseConfig);
-  } else {
-    app = getApps()[0];
-  }
-}
+// Initialize app only once
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 
-export const auth = typeof window !== 'undefined' && app ? getAuth(app) : null;
-export const db = typeof window !== 'undefined' && app ? getFirestore(app) : null;
-export const storage = typeof window !== 'undefined' && app ? getStorage(app) : null;
+const auth = getAuth(app);
+const db = getFirestore(app);
+const storage = getStorage(app);
 
-export default app;
-
+export { app, auth, db, storage };
