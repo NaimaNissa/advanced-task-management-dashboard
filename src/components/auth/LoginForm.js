@@ -11,7 +11,7 @@ export default function LoginForm({ onToggleForm }) {
     password: '',
   });
   const [showPassword, setShowPassword] = useState(false);
-  
+
   const dispatch = useDispatch();
   const { isLoading, error } = useSelector((state) => state.auth);
 
@@ -34,7 +34,7 @@ export default function LoginForm({ onToggleForm }) {
         <h2 className="text-2xl font-bold text-center text-gray-900 mb-6">
           Sign In
         </h2>
-        
+
         {error && (
           <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded mb-4">
             {error}
@@ -98,7 +98,7 @@ export default function LoginForm({ onToggleForm }) {
 
         <div className="mt-6 text-center">
           <p className="text-sm text-gray-600">
-            Don't have an account?{' '}
+            Don&apos;t have an account?{' '}
             <button
               onClick={onToggleForm}
               className="text-blue-600 hover:text-blue-500 font-medium"
@@ -111,4 +111,3 @@ export default function LoginForm({ onToggleForm }) {
     </div>
   );
 }
-

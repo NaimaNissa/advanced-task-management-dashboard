@@ -117,7 +117,7 @@ export default function TaskFilters() {
           <span className="text-sm text-gray-600">Active filters:</span>
           {filters.search && (
             <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">
-              Search: "{filters.search}"
+              Search: &quot;{filters.search}&quot;
             </span>
           )}
           {filters.status && (
@@ -145,4 +145,3 @@ export default function TaskFilters() {
     </div>
   );
 }
-

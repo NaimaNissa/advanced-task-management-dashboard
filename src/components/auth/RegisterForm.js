@@ -55,6 +55,7 @@ export default function RegisterForm({ onToggleForm }) {
         )}
 
         <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Name */}
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
               Full Name
@@ -74,6 +75,7 @@ export default function RegisterForm({ onToggleForm }) {
             </div>
           </div>
 
+          {/* Email */}
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
               Email Address
@@ -93,6 +95,7 @@ export default function RegisterForm({ onToggleForm }) {
             </div>
           </div>
 
+          {/* Password */}
           <div>
             <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
               Password
@@ -112,13 +115,14 @@ export default function RegisterForm({ onToggleForm }) {
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"
               >
-                {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                {showPassword ? <EyeOff /> : <Eye />}
               </button>
             </div>
           </div>
 
+          {/* Confirm Password */}
           <div>
             <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-2">
               Confirm Password
@@ -138,9 +142,9 @@ export default function RegisterForm({ onToggleForm }) {
               <button
                 type="button"
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"
               >
-                {showConfirmPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                {showConfirmPassword ? <EyeOff /> : <Eye />}
               </button>
             </div>
           </div>
@@ -148,25 +152,19 @@ export default function RegisterForm({ onToggleForm }) {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-200"
           >
-            {isLoading ? 'Creating Account...' : 'Create Account'}
+            {isLoading ? 'Creating account...' : 'Register'}
           </button>
         </form>
 
-        <div className="mt-6 text-center">
-          <p className="text-sm text-gray-600">
-            Already have an account?{' '}
-            <button
-              onClick={onToggleForm}
-              className="text-blue-600 hover:text-blue-500 font-medium"
-            >
-              Sign in
-            </button>
-          </p>
-        </div>
+        <p className="mt-6 text-center text-sm text-gray-600">
+          Already have an account?{' '}
+          <button onClick={onToggleForm} className="text-blue-600 hover:underline">
+            Login
+          </button>
+        </p>
       </div>
     </div>
   );
 }
-

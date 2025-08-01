@@ -141,7 +141,7 @@ export default function DashboardPage() {
       <div className="p-6">
         <div className="mb-8">
           <h1 className="text-2xl font-bold text-gray-900 mb-2">Dashboard</h1>
-          <p className="text-gray-600">Welcome back! Here's what's happening with your tasks.</p>
+          <p className="text-gray-600">Welcome back! Here&apos;s what&apos;s happening with your tasks.</p>
         </div>
 
         <DashboardStats />
@@ -150,4 +150,5 @@ export default function DashboardPage() {
     </DashboardLayout>
   );
 }
+
 
