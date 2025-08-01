@@ -1,7 +1,11 @@
+import Link from 'next/link';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import ReduxProvider from '../components/providers/ReduxProvider';
 import AuthProvider from '../components/providers/AuthProvider';
+import UserProfile from '@/components/profile/UserProfile';
+
+<UserProfile />
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,6 +23,9 @@ export default function RootLayout({ children }) {
             {children}
           </AuthProvider>
         </ReduxProvider>
+        <Link href="/dashboard/profile" className="text-sm text-gray-700 hover:underline">
+  Profile
+</Link>
       </body>
     </html>
   );

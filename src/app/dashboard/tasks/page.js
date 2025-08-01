@@ -77,3 +77,13 @@ export default function TasksPage() {
   );
 }
 
+import { signOut } from 'firebase/auth';
+import { auth } from '@/lib/firebase';
+
+const handleLogout = async () => {
+  await signOut(auth);
+  window.location.href = '/login'; // Redirect
+};
+
+// Usage
+<button onClick={handleLogout} className="text-red-600 font-semibold">Logout</button>

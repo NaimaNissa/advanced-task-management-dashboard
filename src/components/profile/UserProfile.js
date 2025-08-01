@@ -27,9 +27,9 @@ export default function UserProfile() {
 
     const avatarURL = await getDownloadURL(avatarRef);
 
-    await updateProfile(user, {
-      photoURL: avatarURL,
-    });
+   await updateProfile(user, { photoURL: avatarURL });
+
+await user.reload(); 
 
     alert('Avatar uploaded!');
   };
