@@ -26,6 +26,3 @@ export default function Home() {
   );
 }
 
-export default function HomePage() {
-  return <div>Welcome to the Task Management Dashboard</div>;
-}
