@@ -35,7 +35,7 @@ export const loginUser = createAsyncThunk(
 
 export const registerUser = createAsyncThunk(
   'auth/registerUser',
-  async ({ email, password, name }, { rejectWithValue }) => {
+  async ({ email, password, name, role }, { rejectWithValue }) => {
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
@@ -47,6 +47,7 @@ export const registerUser = createAsyncThunk(
       const userData = {
         name,
         email,
+        role: role || 'user',
         createdAt: new Date().toISOString(),
         workspaces: []
       };

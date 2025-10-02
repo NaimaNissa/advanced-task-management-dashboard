@@ -9,7 +9,9 @@ import {
   LogOut, 
   ChevronDown,
   Folder,
-  BarChart3
+  BarChart3,
+  Package,
+  ShoppingCart
 } from 'lucide-react';
 import { logoutUser } from '../../store/slices/authSlice';
 import { setCurrentWorkspace } from '../../store/slices/workspaceSlice';
@@ -91,6 +93,24 @@ export default function Sidebar() {
             >
               <Folder className="w-5 h-5" />
               Tasks
+            </a>
+          </li>
+          <li>
+            <a
+              href="/dashboard/products"
+              className="flex items-center gap-3 p-2 text-gray-700 hover:bg-gray-100 rounded-lg"
+            >
+              <Package className="w-5 h-5" />
+              Products
+            </a>
+          </li>
+          <li>
+            <a
+              href="/dashboard/orders"
+              className="flex items-center gap-3 p-2 text-gray-700 hover:bg-gray-100 rounded-lg"
+            >
+              <ShoppingCart className="w-5 h-5" />
+              Orders
             </a>
           </li>
           <li>

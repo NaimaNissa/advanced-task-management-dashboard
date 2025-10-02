@@ -9,8 +9,9 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
+    console.log('🏠 Home page - Auth status:', isAuthenticated);
     if (isAuthenticated) {
-      router.push('/dashboard');
+      router.push('/products');
     } else {
       router.push('/auth');
     }

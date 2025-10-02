@@ -11,6 +11,7 @@ export default function RegisterForm({ onToggleForm }) {
     email: '',
     password: '',
     confirmPassword: '',
+    role: 'user', // Default role
   });
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -38,6 +39,7 @@ export default function RegisterForm({ onToggleForm }) {
       name: formData.name,
       email: formData.email,
       password: formData.password,
+      role: formData.role,
     }));
   };
 
@@ -147,6 +149,23 @@ export default function RegisterForm({ onToggleForm }) {
                 {showConfirmPassword ? <EyeOff /> : <Eye />}
               </button>
             </div>
+          </div>
+
+          {/* Role Selection */}
+          <div>
+            <label htmlFor="role" className="block text-sm font-medium text-gray-700 mb-2">
+              Role
+            </label>
+            <select
+              id="role"
+              name="role"
+              value={formData.role}
+              onChange={handleChange}
+              className="w-full px-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            >
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+            </select>
           </div>
 
           <button
